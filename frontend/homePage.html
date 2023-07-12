@@ -4,20 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="/backend/homePage.js"></script>
+        <script src="/backend/homePageTable.js"></script>
   <title>Homepage</title>
   <link rel="stylesheet" href="homePage.css">
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to the Homepage</h1>
-    <div class="header">
-      <a href="teacherPage.html" class="button">Teachers' Details</a>
-      <a href="student.html" class="button">Student List</a>
-      <a href="course.html" class="button">Keratometer Attempts</a>
-      <a href="grade.html" class="button">Phoropter Attempts</a>
-    </div>
+    <h1 class = "title">Welcome to the Homepage</h1>
+    <h1>Student Lists</h1>
+    <tbody id="module-tbody"></tbody>
+    <!-- <div class="container">
+    <div class="table-container">
+      <h1>Student Lists</h1>
+      <div class="table-row header-row">
+        <div class="table-cell">Username</div>
+        <div class="table-cell">Password</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">teacher1</div>
+        <div class="table-cell">password1</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">teacher2</div>
+        <div class="table-cell">password2</div>
+      </div>
+    </div> -->
+    
   </div>
 </body>
 </html>

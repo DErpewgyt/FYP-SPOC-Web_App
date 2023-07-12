@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/DErpewgyt/FYP-SPOC-Web_App/issues"
   },
-  "homepage": "https://github.com/DErpewgyt/FYP-SPOC-Web_App#readme"
+  "homepage": "https://github.com/DErpewgyt/FYP-SPOC-Web_App#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
