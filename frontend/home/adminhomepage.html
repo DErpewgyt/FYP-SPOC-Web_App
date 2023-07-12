@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../CommonVars.js"></script>
+    <link rel="stylesheet" href="./adminhomepage.css">
+    <title>Admin Homepage</title>
+</head>
+
+<script defer src="../../adminsidebar.js"></script>
+
+<body>
+    <!-- Navbar stuff -->
+    <div id="mySidebar" class="sidebar">
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <!-- end of navbar stuff -->
+
+    <h1>Admin Homepage for admin</h1>
+    <script>
+        // send non-logged-in to login page
+        const loginPage = "/"
+        const userHomepage = "/home/homepage.html"
+        const userData = localStorage.getItem('userInfo');
+        if (!userData) window.location.replace(loginPage)
+
+        try {
+            // send users without admin role to user homepage
+            const role = JSON.parse(userData)[0].role
+            if (role !== "admin") window.location.replace(userHomepage)
+        } catch {
+            // failsafe: send users whose role could not be determined to login page
+            if (!userData) window.location.replace(loginPage)
+        }
+    </script>
+    <!-- super basic ik -->
+    <!-- <a href="/moves/admin/index.html">Moves</a>
+    <button id="logout">Log Out</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#logout").click(function () {
+                localStorage.removeItem('token');
+                localStorage.removeItem('userInfo');
+                window.location.replace("/");
+            })
+        })
+    </script> -->
+
+    <!-- logout -->
+    <script>
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userInfo');
+            window.location.replace("/");
+        }
+    </script>
+</body>
+
+</html>

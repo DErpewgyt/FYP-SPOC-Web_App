@@ -1,0 +1,82 @@
+/* for navbar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #5ec57e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    /* transform: translate(100px, 100px); */
+  }
+  
+  .sidebar a {
+    padding: 16px 16px 16px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #f0fce4;
+    color: #347c7e;
+    /* padding: 10px 15px; */
+    border: none;
+  }
+  
+  .openbtn:hover {
+    color: #00fb4a;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding-bottom: 20px;
+    padding-top: 9px;
+    padding-left: 6px;
+    width: 48px;
+  }
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+  
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  
+  /* for table */
+  body {
+    background: #f0fce4;
+  }
+
+/* for main */
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #347c7e;
+}
+

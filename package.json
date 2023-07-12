@@ -1,0 +1,21 @@
+{
+  "name": "fyp-spoc-web_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "postinstall": "cd backend && npm install",
+    "dev": "cd backend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DErpewgyt/FYP-SPOC-Web_App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DErpewgyt/FYP-SPOC-Web_App/issues"
+  },
+  "homepage": "https://github.com/DErpewgyt/FYP-SPOC-Web_App#readme"
+}

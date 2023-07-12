@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>New Slime</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-Vawesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgcc3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="./index.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    </style>
+    <script src="../../public/react/allSlimePost.js" type="module"></script>
+
+</head>
+
+<body>
+    <script>
+        // send non-logged-in to login page
+        const loginPage = "/"
+        const userHomepage = "/home/homepage.html"
+        const userData = localStorage.getItem('userInfo');
+        if (!userData) window.location.replace(loginPage)
+
+        try {
+            // send users without admin role to user homepage
+            const role = JSON.parse(userData)[0].role
+            if (role !== "admin") window.location.replace(userHomepage)
+        } catch {
+            // failsafe: send users whose role could not be determined to login page
+            if (!userData) window.location.replace(loginPage)
+        }
+    </script>
+    <!-- navbar -->
+
+    <script defer src="../../adminsidebar.js"></script>
+
+    <body>
+        <!-- Navbar stuff -->
+        <div id="mySidebar" class="sidebar">
+        </div>
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰</button>
+        </div>
+        <!-- end of navbar stuff -->
+        
+        <div id="root"></div>
+
+    </body>
+    <!-- logout -->
+    <script>
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userInfo');
+            window.location.replace("/");
+        }
+    </script>
+    <script>
+        //for nav bar
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementsByClassName("openbtn")[0].style.opacity = 0
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementsByClassName("openbtn")[0].style.opacity = 100
+        }</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slime-DEX</title>
+    <link href="/frontend/main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="./allSlime.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <audio id="myAudio" loop>
+        <source src="./Pixel adventures.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- send users back to homepage -->
+    <script>
+        // send non-logged-in to login page
+        const loginPage = "/"
+        const userHomepage = "/home/homepage.html"
+        const userData = localStorage.getItem('token');
+        if (!userData) window.location.replace(loginPage)
+    </script>
+
+    <script defer src="../../sidebar.js"></script>
+
+    <body>
+        <!-- Navbar stuff -->
+        <div id="mySidebar" class="sidebar">
+        </div>
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰</button>
+        </div>
+        <!-- end of navbar stuff -->
+
+        <h1>Slime-DEX</h1>
+
+        <div id="btnDiv">
+            <ul>
+                <button class="gradient-button gradient-effect href" type="submit"><a href="/slimeinventory/">Slime
+                        Inventory</a></button>
+            </ul>
+        </div>
+
+        <div id="slimeList"></div>
+
+        <script src="./index.js"></script>
+    </body>
+
+    <script> navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+
+            var x = document.getElementById("myAudio");
+            x.play();
+
+            // stop microphone stream acquired by getUserMedia
+            stream.getTracks().forEach(function (track) { track.stop(); });
+        }); </script>
+
+    <!-- logout -->
+    <script>
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userInfo');
+            window.location.replace("/");
+        }
+    </script>
+
+</html>

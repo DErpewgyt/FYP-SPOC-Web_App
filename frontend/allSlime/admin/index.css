@@ -1,0 +1,184 @@
+body {
+    background-image: url('wallpaper.jpg');
+    color: rgb(0, 0, 0);
+    margin: 0;
+    font-family: 'VT323', monospace;
+}
+table {
+    margin: 0 auto;
+}
+
+
+.container {
+    padding: 40px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 54px;
+}
+
+#slimedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+    padding-inline-start: 0;
+}
+
+.card {
+    list-style: none;
+    padding: 40px;
+    background-color: #f4f4f4;
+    color: #222;
+  text-align: center;
+}
+
+.card:hover {
+    animation: bounce 0.5s linear;
+}
+
+.card-title {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 32px;
+    font-weight: normal;
+}
+.card-subtitle {
+    margin-top: 5px;
+    color: #666;
+    font-weight: lighter;
+}
+
+.card-image {
+    height: 180px;
+}
+
+/* for navbar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #5ec57e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* padding-top: 60px; */
+  }
+  
+  .sidebar a {
+    padding: 16px 16px 16px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn::before {
+    width: 100%;
+    }
+    
+  .sidebar .closebtn {
+    font-size: 36px;
+    margin-left: auto;
+    width: fit-content;
+    display: block;
+  }
+  
+  .openbtn {
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #f0fce4;
+    color: #347c7e;
+    /* padding: 10px 15px; */
+    border: none;
+  }
+  
+  .openbtn:hover {
+    color: #00fb4a;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding-bottom: 20px;
+    padding-top: 9px;
+    padding-left: 6px;
+    width: 48px;
+  }
+ 
+  .href {
+    cursor: pointer;
+    margin: 10px;
+    height: 30px;
+    width: 150px;
+    border-color: greenyellow;
+    background-color: rgb(173, 255, 173);
+    box-shadow: 0 0 20px #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  }
+  .gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+}
+.href:hover{
+    background-position: right center;
+  }
+  #btnDiv {
+    margin-top: 20px;
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+    color:#000;
+}
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+  
+
+  
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes glowing {
+    0% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+    50% {
+      background-color: #49e819;
+      box-shadow: 0 0 10px #49e819;
+    }
+    100% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+  }

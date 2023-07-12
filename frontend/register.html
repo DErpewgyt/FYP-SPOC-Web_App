@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="CommonVars.js"></script>
+    <link rel="stylesheet" href="./login.css" type="text/css">
+    <title>Register</title>
+</head>
+
+<body>
+    <h1>Register</h1>
+
+    <form id="register">
+        <label for="newusername">new username</label><br>
+        <input type="text" id="newusername" name="newusername"><br>
+        <br>
+        <label for="newpassword">new password</label><br>
+        <input type="password" id="newpassword" name="newpassword"><br>
+        <label for="newpassword">re-enter new password</label><br>
+        <input type="password" id="reenternewpassword" name="reenternewpassword"><br>
+        <a href="index.html">Back to login</a>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        const baseUrl = API_URL(window.location.hostname);
+        $(document).ready(function () {
+            $("#register").submit(function (event) {
+                event.preventDefault(); // prevent refresh
+                axios.post(`${baseUrl}/api/user/register`, { "username": $("#newusername").val(), "password": $("#newpassword").val(), "reenterpassword": $("#reenternewpassword").val() }).then(
+                    function (response) {
+
+                        window.location.assign("/");
+                    },
+                    function (error) {
+                        if (error.response.data && error.response.data === "passwords do not match") return alert("Passwords do not match");
+                        alert(error.response.data.data || "Something went wrong")   
+                    }
+                )
+            })
+        })
+    </script>
+</body>
+
+</html>

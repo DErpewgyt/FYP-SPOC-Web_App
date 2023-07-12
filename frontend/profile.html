@@ -1,0 +1,79 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="CommonVars.js"></script>
+    <link rel="stylesheet" href="./login.css" type="text/css">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>Profile</h1>
+
+    <form id="register">
+        <label >choose an avatar</label><br>
+        <div id="avatar-select">
+            <button type="button" id="avatar-prev">Prev</button>
+            <div id="avatar-choices" selected-avatar-id="1">
+                <img src="./images/character1.png" class="avatar-choice" avatar-id="1" avatar-name="character1" selected="true">
+                <img src="./images/character2.png" class="avatar-choice" avatar-id="2" avatar-name="character2">
+            </div>
+            <button type="button" id="avatar-next">Next</button>
+        </div>
+        <label for="bio">new bio</label><br>
+        <textarea id="bio" name="bio" rows="8" cols="50"></textarea><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        const baseUrl = API_URL(window.location.hostname);
+        $(document).ready(function () {
+            $("#register").submit(function (event) {
+                event.preventDefault(); // prevent refresh
+                axios.post(`${baseUrl}/api/user/setprofile`, { "bio": $("#bio").val(), "selectedAvatar": $("#avatar-choices").children(`.avatar-choice[avatar-id="${$("#avatar-choices").attr("selected-avatar-id")}"]`).first().attr("avatar-name")}).then(
+                    function (response) {
+                        
+                        window.location.assign("/home/homepage.html");
+                    },
+                    function (error) {
+                        if (error.response.data && error.response.data === "passwords do not match") return alert ("Passwords do not match");
+                        alert("Invalid username or password");
+                    }
+                )
+            })
+
+            const updateSelectedAvatar = (newSelectedAvatarId) => {
+                $("#avatar-choices").children(".avatar-choice").each((_, avatarChoice) => {
+                    $(avatarChoice).removeAttr("selected")
+                    console.log(avatarChoice)
+                });
+                $("#avatar-choices").attr("selected-avatar-id", newSelectedAvatarId);
+                $("#avatar-choices").children(`.avatar-choice[avatar-id="${newSelectedAvatarId}"]`).first().attr("selected", "selected")
+            }
+
+            $("#avatar-next").click(function() {
+                let selectedAvatarId = $("#avatar-choices").attr("selected-avatar-id");
+                selectedAvatarId++;
+                if (selectedAvatarId > $("#avatar-choices").children(".avatar-choice").length) selectedAvatarId = 1;
+                updateSelectedAvatar(selectedAvatarId)
+            })
+
+            $("#avatar-prev").click(function() {
+                let selectedAvatarId = $("#avatar-choices").attr("selected-avatar-id");
+                selectedAvatarId--;
+                if (selectedAvatarId < 1) selectedAvatarId = $("#avatar-choices").children(".avatar-choice").length;
+                updateSelectedAvatar(selectedAvatarId)
+            })
+        })
+    </script>
+</body>
+</html>

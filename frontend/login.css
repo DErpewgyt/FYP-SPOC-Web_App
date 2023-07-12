@@ -1,0 +1,66 @@
+  /* for table */
+  body {
+    /* background: #f0fce4; */
+    background-image: url('wallpaper.jpg');
+  }
+
+/* for main */
+h1, label, input{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #347c7e;
+    font-size: 30px;
+}
+
+form{
+    max-width: max-content;
+    margin: auto;
+    margin-top: auto;
+}
+
+input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #5ec57e;
+    border-radius: 4px;
+  }
+
+  a{
+    font-family: 'Courier New', Courier, monospace;
+    color: #347c7e;
+  }
+
+  textarea {
+    font-family: 'Courier New', Courier, monospace;
+    color: #347c7e;
+    font-size: 30px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #5ec57e;
+    border-radius: 4px;
+  }
+
+#avatar-select {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#avater-select > * {
+  display: inline-block;
+}
+
+#avatar-choices {
+  margin: 10%
+}
+
+.avatar-choice {
+  min-width: 25%;
+  height: auto;
+  margin: 0% 0%;
+}
+
+.avatar-choice:not([selected]) {
+  scale: 0;
+}
