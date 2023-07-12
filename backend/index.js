@@ -33,8 +33,8 @@ app.listen(PORT, () => {
 // SETTING MAIN ROUTES
 //////////////////////////////////////////////////////
 
-// const mainRoutes = require("./routes/mainRoute");
-// const router = require('./routes/itemRoute');
-// app.use("/api", mainRoutes);
-// router.use(cors());
-// router.use(express.json());
+const mainRoutes = require("./routes/mainRoute");
+const router = require('./routes/itemRoute');
+app.use("/api", mainRoutes);
+router.use(cors());
+router.use(express.json());
