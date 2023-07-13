@@ -63,3 +63,8 @@ body {
   padding: 8px;
   border-bottom: 1px solid #ddd;
 }
+
+#btnDiv {
+  margin-top: 20px;
+  text-align: center;
+}

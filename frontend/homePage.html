@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="/backend/homePage.js"></script>
-        <script src="/backend/homePageTable.js"></script>
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="../backend/homePage.js"></script>
+  <script src="../backend/homePageTable.js"></script>
   <title>Homepage</title>
   <link rel="stylesheet" href="homePage.css">
 </head>
+
 <body>
   <div class="container">
-    <h1 class = "title">Welcome to the Homepage</h1>
+    <h1 class="title">Welcome to the Homepage</h1>
     <h1>Student Lists</h1>
-    <tbody id="module-tbody"></tbody>
-    <!-- <div class="container">
-    <div class="table-container">
-      <h1>Student Lists</h1>
-      <div class="table-row header-row">
-        <div class="table-cell">Username</div>
-        <div class="table-cell">Password</div>
-      </div>
-      <div class="table-row">
-        <div class="table-cell">teacher1</div>
-        <div class="table-cell">password1</div>
-      </div>
-      <div class="table-row">
-        <div class="table-cell">teacher2</div>
-        <div class="table-cell">password2</div>
-      </div>
-    </div> -->
-    
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Admin Number</th>
+          <th>Student Name</th>
+          <th>Keratometer Attempts</th>
+          <th>Keratometer Completions</th>
+          <th>Phoropter Attempts</th>
+          <th>Phoropter Completions</th>
+        </tr>
+      </thead>
+      <tbody id="module-tbody"></tbody>
+    </table>
+
+    <template id="row-template">
+      <tr>
+          <td class="AdminNo">-</td>
+          <td class="StudentName">-</td>
+          <td class="AttemptKera">-</td>
+          <td class="CompleteKera">-</td>
+          <td class="AttemptPhoro">-</td>
+          <td class="CompletePhoro">-</td>
+      </tr>
+  </template>
+
+  <div id="btnDiv">
+    <ul>
+        <button class="gradient-button href" type="submit">Clear Table</button>
+    </ul>
+</div>
+
   </div>
 </body>
+
 </html>

@@ -4,6 +4,7 @@ const router = express.Router();
 const controller = require("../controllers/studentController");
 
 router.get("/", controller.getAllStudent);
+router.delete("/", controller.deleteData);
 
 module.exports = router;
 

@@ -34,7 +34,7 @@ app.listen(PORT, () => {
 //////////////////////////////////////////////////////
 
 const mainRoutes = require("./routes/mainRoute");
-const router = require('./routes/itemRoute');
+// const router = require('./routes/itemRoute');
 app.use("/api", mainRoutes);
-router.use(cors());
-router.use(express.json());
+// router.use(cors());
+// router.use(express.json());
