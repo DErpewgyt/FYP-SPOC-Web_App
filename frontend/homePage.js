@@ -24,4 +24,37 @@ window.addEventListener('DOMContentLoaded', function () {
         );
       }
     });
+
+  const clearTableButton = document.getElementById('clearButton');
+
+  // Add event listener to the "Clear Table" button
+  clearTableButton.addEventListener('click', confirmClearTable);
+
+  // Function to handle the "Clear Table" button click
+  function confirmClearTable(event) {
+    event.preventDefault();
+    console.log("Button clicked!");
+
+    // Display a confirmation dialog
+    const confirmation = confirm("Are you sure you want to clear the table?");
+
+    if (confirmation) {
+      clearTable();
+    }
+  }
+
+  // Function to clear the table
+  function clearTable() {
+    axios.post(`${API_URL}/api/studentlist/`)
+      .then(response => {
+        // Handle successful response, if required
+        console.log(response.data);
+        // Refresh the page
+        window.location.reload();
+      })
+      .catch(error => {
+        // Handle error response, if required
+        console.error(error);
+      });
+  }
 });

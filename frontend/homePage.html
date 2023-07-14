@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="../backend/homePage.js"></script>
-  <script src="../backend/homePageTable.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+  <script src="./homePage.js"></script>
+  <script src="./homePageTable.js"></script>
+  <!-- <script src="./homePageClear.js"></script> -->
   <title>Homepage</title>
   <link rel="stylesheet" href="homePage.css">
 </head>
@@ -35,20 +36,20 @@
 
     <template id="row-template">
       <tr>
-          <td class="AdminNo">-</td>
-          <td class="StudentName">-</td>
-          <td class="AttemptKera">-</td>
-          <td class="CompleteKera">-</td>
-          <td class="AttemptPhoro">-</td>
-          <td class="CompletePhoro">-</td>
+        <td class="AdminNo">-</td>
+        <td class="StudentName">-</td>
+        <td class="AttemptKera">-</td>
+        <td class="CompleteKera">-</td>
+        <td class="AttemptPhoro">-</td>
+        <td class="CompletePhoro">-</td>
       </tr>
-  </template>
+    </template>
 
-  <div id="btnDiv">
-    <ul>
-        <button class="gradient-button href" type="submit">Clear Table</button>
-    </ul>
-</div>
+    <div id="btnDiv">
+      <ul>
+        <button id="clearButton" type="submit">Clear Table</button>
+      </ul>
+    </div>
 
   </div>
 </body>

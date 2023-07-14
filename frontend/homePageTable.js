@@ -22,9 +22,5 @@ function addToTable(AdminNo, StudentName, AttemptKera, AttemptPhoro, CompleteKer
     row.querySelector('.CompleteKera').textContent = CompleteKera;
     row.querySelector('.CompletePhoro').textContent = CompletePhoro;
 
-
-
-   
-
     document.querySelector('#module-tbody').appendChild(row);
 }
