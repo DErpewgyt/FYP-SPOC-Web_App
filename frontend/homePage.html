@@ -11,12 +11,18 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
   <script src="./homePage.js"></script>
   <script src="./homePageTable.js"></script>
-  <!-- <script src="./homePageClear.js"></script> -->
   <title>Homepage</title>
   <link rel="stylesheet" href="homePage.css">
 </head>
 
 <body>
+  <script>
+    // send non-logged-in to login page
+    const loginPage = "/"
+    const userData = localStorage.getItem('userInfo');
+    if (!userData) window.location.replace(loginPage)
+  </script>
+
   <div class="container">
     <h1 class="title">Welcome to the Homepage</h1>
     <h1>Student Lists</h1>
