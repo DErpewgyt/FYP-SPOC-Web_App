@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`App listening to port ${PORT}`);
+    console.log('DATABASE_URL:', process.env.DATABASE_URL);
 });
 
 //////////////////////////////////////////////////////
@@ -38,3 +39,6 @@ const mainRoutes = require("./routes/mainRoute");
 app.use("/api", mainRoutes);
 // router.use(cors());
 // router.use(express.json());
+app.get("/message", (req, res, next) => {
+    res.send(req.query);
+});
