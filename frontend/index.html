@@ -38,7 +38,7 @@
               // Send user to the next page depending on their role   
               const role = response.data.UserData[0].role
               //if (role !== "admin") return window.location.assign("/home/homepage.html");
-              window.location.assign("/homepage.html");
+              window.location.assign("./homePage.html");
             },
             ).catch(error => {
               alert("Invalid username or password");
