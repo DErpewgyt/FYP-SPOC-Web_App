@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded', function () {
           response.data[i].AttemptPhoropter,
           response.data[i].CompletedKeratometer,
           response.data[i].CompletedPhoropter,
+          response.data[i].FirstAttempt,
+          response.data[i].LastAttempt,
         );
       }
     });
