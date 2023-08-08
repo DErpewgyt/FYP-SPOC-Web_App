@@ -26,7 +26,9 @@ module.exports.deleteData = function (req, res, next) {
         AttemptKeratometer INT NOT NULL DEFAULT '0',
         CompletedKeratometer INT NOT NULL DEFAULT '0',
         AttemptPhoropter INT NOT NULL DEFAULT '0',
-        CompletedPhoropter INT NOT NULL DEFAULT '0'
+        CompletedPhoropter INT NOT NULL DEFAULT '0',
+        FirstAttempt DATETIME DEFAULT NULL,
+        LastAttempt DATETIME DEFAULT NULL
       );
     `;
 
