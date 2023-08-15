@@ -5,6 +5,10 @@ function convertToSingaporeTime(utcTimeString) {
         timeZone: 'Asia/Singapore' // Set to the appropriate time zone
     };
 
+    if (utcTimeString === null) {
+        return 'Null';
+    }
+
     var utcTime = new Date(utcTimeString);
     utcTime.setHours(utcTime.getHours() - 8);
     console.log(utcTime);
