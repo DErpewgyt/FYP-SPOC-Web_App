@@ -1,20 +1,22 @@
-// function convertToSingaporeTime(utcTimeString) {
-//     const options = {
-//         year: 'numeric', month: '2-digit', day: '2-digit',
-//         hour: '2-digit', minute: '2-digit', second: '2-digit',
-//         timeZone: 'Asia/Singapore' // Set to the appropriate time zone
-//     };
-
-//     const utcTime = new Date(utcTimeString);
-//     return utcTime.toLocaleString(undefined, options);
-// }
-
-const { DateTime } = require('luxon');
-
 function convertToSingaporeTime(utcTimeString) {
-    const utcTime = DateTime.fromISO(utcTimeString, { zone: 'utc' });
-    const singaporeTime = utcTime.setZone('Asia/Singapore');
-    return singaporeTime.toFormat('yyyy-MM-dd HH:mm:ss');
+    const options = {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        timeZone: 'Asia/Singapore' // Set to the appropriate time zone
+    };
+
+    var utcTime = new Date(utcTimeString);
+    utcTime.setHours(utcTime.getHours() - 8);
+    console.log(utcTime);
+    return utcTime.toLocaleString(undefined, options);
+
+    // var utcTime = DateTime.fromISO(utcTimeString, { zone: 'utc' });
+    // var singaporeTime = utcTime.setZone('Asia/Singapore');
+    
+    // // Subtract 8 hours from the displayed time
+    // var adjustedTime = singaporeTime.minus({ hours: 8 });
+    // console.log(adjustedTime);
+    // return adjustedTime.toLocaleString(undefined, options);
 }
 
 function isLocalhost(url) {
