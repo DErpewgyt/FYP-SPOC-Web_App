@@ -10,7 +10,7 @@ function convertToSingaporeTime(utcTimeString) {
     }
 
     var utcTime = new Date(utcTimeString);
-    utcTime.setHours(utcTime.getHours() - 8);
+    // utcTime.setHours(utcTime.getHours() - 8);
     console.log(utcTime);
     return utcTime.toLocaleString(undefined, options);
 
