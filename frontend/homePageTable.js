@@ -2,7 +2,7 @@ function convertToSingaporeTime(utcTimeString) {
     const options = {
         year: 'numeric', month: '2-digit', day: '2-digit',
         hour: '2-digit', minute: '2-digit', second: '2-digit',
-        // timeZone: 'Asia/Singapore' // Set to the appropriate time zone
+        timeZone: 'Asia/Singapore' // Set to the appropriate time zone
     };
 
     if (utcTimeString === null) {
@@ -10,7 +10,7 @@ function convertToSingaporeTime(utcTimeString) {
     }
 
     var utcTime = new Date(utcTimeString);
-    // utcTime.setHours(utcTime.getHours() - 8);
+    utcTime.setHours(utcTime.getHours() - 8);
     console.log(utcTime);
     return utcTime.toLocaleString(undefined, options);
 
